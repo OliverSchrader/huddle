@@ -1,0 +1,216 @@
+@use './stylesheets/colors.scss';
+
+.app {
+  background-image: url('./assets/images/bg-desktop.svg');
+  height: 100%;
+  min-height: calc(100vh - 100px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: colors.$violet;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 80px 40px 80px;
+
+  @media screen and (max-width: 1415px) {
+    background-image: url('./assets/images/bg-mobile.svg');
+    padding: 30px 40px 10px 40px;
+    min-height: calc(100vh - 40px);
+  }
+
+  @media screen and (max-width: 375px) {
+    padding: 30px 30px 10px 30px;
+    min-height: calc(100vh - 40px);
+    background-size: initial;
+    background-position: initial;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 1415px) {
+      margin-bottom: 40px;
+    }
+
+    & img {
+      @media screen and (max-width: 375px) {
+        height: 40px;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    @media screen and (max-width: 1415px) {
+      flex-direction: column;
+    }
+
+    &__left {
+      display: flex;
+
+      & img {
+        max-width: 100%;
+
+        @media screen and (max-width: 1415px) {
+          max-height: 400px;
+        }
+      }
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 640px;
+      transform: translateY(-40px);
+      flex: 1;
+    }
+
+    &__title {
+      font-size: 48px;
+      font-weight: 700;
+      color: colors.$white;
+      margin: 0 0 20px 0;
+      font-family: 'Poppins';
+
+      @media screen and (max-width: 1415px) {
+        text-align: center;
+        margin: 20px 0 20px 0;
+        font-size: 24px;
+      }
+    }
+
+    &__subtitle {
+      font-size: 22px;
+      font-weight: 400;
+      color: colors.$white;
+      margin: 0 0 40px 0;
+      font-family: 'Open Sans';
+
+      @media screen and (max-width: 1415px) {
+        text-align: center;
+        font-size: 15px;
+        margin: 0 0 30px 0;
+      }
+    }
+
+    &__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 60px;
+      width: 200px;
+      background-color: colors.$white;
+      border-radius: 50px;
+      font-size: 20px;
+      font-family: 'Poppins';
+      font-weight: 400;
+      color: colors.$violet;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      padding: 0;
+      border: none;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+
+      &:hover {
+        background-color: colors.$soft-magenta;
+        color: colors.$white;
+      }
+
+      @media screen and (max-width: 1415px) {
+        align-self: center;
+      }
+
+      @media screen and (max-width: 650px) {
+        height: 45px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and (max-width: 650px) {
+      flex-direction: column-reverse;
+    }
+
+    &__attribution {
+      font-size: 14px;
+      font-weight: 400;
+      color: colors.$white;
+      margin: 0;
+      font-family: 'Open Sans';
+
+      @media screen and (max-width: 650px) {
+        font-size: 10px;
+      }
+
+      & a:link {
+        color: colors.$soft-magenta;
+      }
+
+      & a:visited {
+        color: colors.$soft-magenta;
+      }
+    }
+
+    &__icons {
+      display: flex;
+      gap: 20px;
+
+      @media screen and (max-width: 650px) {
+        margin-bottom: 10px;
+      }
+
+      @media screen and (max-width: 375px) {
+        gap: 10px;
+      }
+    }
+
+    &__icon {
+      border: 1px solid colors.$white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      width: 40px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      & > svg {
+        fill: colors.$white;
+        height: 20px;
+        width: 20px;
+        transition: all 0.2s ease-in-out;
+
+        @media screen and (max-width: 375px) {
+          height: 16px;
+          width: 16px;
+        }
+      }
+
+      @media screen and (max-width: 375px) {
+        height: 30px;
+        width: 30px;
+      }
+
+      &:hover {
+        border: 1px solid colors.$soft-magenta;
+
+        & > svg {
+          fill: colors.$soft-magenta;
+        }
+      }
+    }
+  }
+}
