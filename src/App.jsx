@@ -6,11 +6,11 @@ function App() {
   return (
     <div className='app'>
       <div className='app__header'>
-        <img src='src/assets/images/logo.svg' />
+        <img src='./src/assets/images/logo.svg' />
       </div>
       <div className='app__content'>
         <div className='app__content__left'>
-          <img src='src/assets/images/illustration-mockups.svg' />
+          <img src='./src/assets/images/illustration-mockups.svg' />
         </div>
         <div className='app__content__right'>
           <h1 className='app__content__title'>Build The Community Your Fans Will Love</h1>
